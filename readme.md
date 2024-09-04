@@ -43,3 +43,7 @@ python main.py
 ```
 
 ¡Diviértete jugando Ninja Frog!
+
+### Créditos de la música y los assets
+
+Todos los créditos de la música y los assets utilizados en este juego van para sus respectivos autores. Los assets fueron obtenidos de [Itch.io](https://itch.io/).
