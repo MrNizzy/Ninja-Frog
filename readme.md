@@ -18,6 +18,10 @@ Ninja Frog es un juego en el que controlas a una rana ninja que debe recolectar 
 - **Puntos**: Acumula puntos recolectando frutas. Cada fruta recolectada suma entre 1 a 10 puntos de manera aleatoria.
 - **Vidas**: Comienzas con 5 vidas. Pierdes una vida si la rana choca con un enemigo. El juego termina cuando pierdes todas las vidas. Y también pierdes puntos al perder una vida, entre 1 a 10 puntos de manera aleatoria.
 
+## Vidas
+
+- **Obtención de vidas**: Puedes obtener vidas adicionales por cada 5 frutas recogidas.
+
 # Instalación de dependencias
 
 Para poder ejecutar el juego, necesitarás instalar las siguientes dependencias:
