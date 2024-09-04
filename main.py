@@ -77,7 +77,7 @@ class Player:
         if self.frames:
             screen.blit(self.frames[self.current_frame], (self.x, self.y))
         
-
+    # Mover al jugador en una dirección
     def move(self, dx, dy):
         self.x += dx
         self.y += dy
@@ -92,6 +92,7 @@ class Player:
         if self.y > SCREEN_HEIGHT - 64:
             self.y = SCREEN_HEIGHT - 64
 
+    # Perder una vida y comprobar si el jugador ha perdido todas las vidas
     def lose_life(self, enemies, score):
         self.lives -= 1
         hit_sound.play()
@@ -104,6 +105,7 @@ class Player:
             self.current_frame = 0  # Reiniciar el frame actual
             self.respawn(enemies)
 
+    # Respawn del jugador en una posición aleatoria que no esté ocupada por un enemigo
     def respawn(self, enemies):
         while True:
             new_row = random.randint(0, (SCREEN_HEIGHT // SQUARE_SIZE) - 1)
@@ -153,6 +155,7 @@ class Enemy:
     def drawSprite(self):
         screen.blit(self.frames[self.current_frame], (self.x, self.y))
 
+    # Mover al enemigo en una dirección aleatoria
     def move(self, dx, dy):
         self.x += dx
         self.y += dy
@@ -207,6 +210,7 @@ class Fruits:
         if self.frames:
             screen.blit(self.frames[self.current_frame], (self.x, self.y))
     
+    # Mover la fruta a una posición aleatoria que no esté ocupada por un enemigo
     def random_move(self, enemies):
         self.random_sprite()
         while True:
@@ -240,10 +244,9 @@ def show_menu():
         text = font.render("Mueve al ninja con las flechas del teclado", True, (255, 255, 255))
         screen.blit(text, (SCREEN_WIDTH // 2 - text.get_width() // 2, SCREEN_HEIGHT // 2 + 150))
         text = font.render("Evita a los enemigos y recolecta las frutas", True, (255, 255, 255))
-        screen.blit(text, (SCREEN_WIDTH // 2 - text.get_width() // 2, SCREEN_HEIGHT // 2 + 180))
-        
-        
+        screen.blit(text, (SCREEN_WIDTH // 2 - text.get_width() // 2, SCREEN_HEIGHT // 2 + 180))        
 
+        # Eventos de ratón para el botón de inicio
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
